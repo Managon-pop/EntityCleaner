@@ -32,13 +32,13 @@ class EntityCleaner extends PluginBase{
 		if($sender->isOp()){
 		if($command->getName() == "wclear"){
 	    if(!$sender instanceof Player){
-            $this->getLogger()->info("ゲーム内で使用してください");
+            $this->getLogger()->info("Use this command only in a game..");
             return;
 	    }
 	       $values = 0;
            $level = $sender->getLevel();
            $values = count($level->getEntities());
-           if($values <= 0){$sender->sendMessage("エンティティはいません"); return;}
+           if($values <= 0){$sender->sendMessage("There aren't any Entities."); return;}
            foreach($level->getEntities() as $entity){
            	if(!$entity instanceof Player){
            		$entity->close();
@@ -50,8 +50,8 @@ class EntityCleaner extends PluginBase{
 	    		}
 	    	}
 	       $res = $values - count($sender->getLevel()->getPlayers());
-           $sender->sendMessage("このワールドのEntity".$res."体削除しました");
-           $this->getLogger()->info($sender->getName()."がEntity".$res."体削除しました");
+           $sender->sendMessage("Remove".$res."Entities");
+           $this->getLogger()->info($sender->getName()."Removed".$res."Entities");
            foreach($sender->getServer()->getLevels() as $level){
 			$level->save(true);
 		}
@@ -73,8 +73,8 @@ class EntityCleaner extends PluginBase{
 	    }
 	   }
 	                    $res = $this->en - count(Server::getInstance()->getOnlinePlayers());
-	    	            $sender->sendMessage("全てのワールドのEntity".$res."体削除しました");
-                        $this->getLogger()->info($sender->getName()."がEntity".$res."体削除しました");
+	    	            $sender->sendMessage("Remove".$res."entities in all worlds");
+                        $this->getLogger()->info($sender->getName()."Removed".$res."entities");
                         $this->en = 0;
                         foreach(Server::getInstance()->getLevels() as $level){
 			                   $level->save(true);
@@ -105,7 +105,7 @@ class EntityCleaner extends PluginBase{
 	    			}
 	    		}
 	    		        $res = $this->enn - count(Server::getInstance()->getOnlinePlayers());
-                        $this->getOwner()->getLogger()->info("Entity".$res."体削除しました");
+                        $this->getOwner()->getLogger()->info("Removed".$res."entities");
                         $this->enn = 0;
                         foreach(Server::getInstance()->getLevels() as $level){
 			                    $level->save(true);
