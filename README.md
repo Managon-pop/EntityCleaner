@@ -1,3 +1,3 @@
 Commands                                                                                                                                  
- /wclear: clean all entities in your world.                                                                                              
- /allclear: clean all entities in all world.
+ /wclear: Remove all entities in your world.                                                                                              
+ /allclear: Remove all entities in all world.
