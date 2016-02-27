@@ -38,7 +38,7 @@ class EntityCleaner extends PluginBase{
 	       $values = 0;
            $level = $sender->getLevel();
            $values = count($level->getEntities());
-           if($values <= 0){$sender->sendMessage("エンティティはいません"); return;}
+           if($values <= 0){$sender->sendMessage("エンティティは存在しませんでした"); return;}
            foreach($level->getEntities() as $entity){
            	if(!$entity instanceof Player){
            		$entity->close();
