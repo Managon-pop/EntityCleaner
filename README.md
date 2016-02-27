@@ -1,3 +1,3 @@
-Commands                                                                                                                                  
- /wclear: clean all entities in your world.                                                                                              
- /allclear: clean all entities in all world.
+コマンド
+/wclear: あなたのワールドのエンティティを削除します。
+/allclear: すべてのエンティティを削除します。
