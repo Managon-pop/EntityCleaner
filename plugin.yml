@@ -1,0 +1,10 @@
+name: EntityCleaner
+main: Managon\EntityCleaner
+api: 1.13.0
+version: 0.1
+author: Managon
+commands:
+ wclear:
+  discription: "remove entities in sender's world"
+ allclear:
+  discription: "remove all Entities."
