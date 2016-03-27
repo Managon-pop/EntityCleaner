@@ -74,7 +74,7 @@ class EntityCleaner extends PluginBase{
 	   }
 	                    $res = $this->en - count(Server::getInstance()->getOnlinePlayers());
 	    	            $sender->sendMessage("Remove ".$res." entities in all worlds");
-                        $this->getLogger()->info($sender->getName()."Removed ".$res." entities");
+                        $this->getLogger()->info($sender->getName()." Removed ".$res." entities");
                         $this->en = 0;
                         foreach(Server::getInstance()->getLevels() as $level){
 			                   $level->save(true);
